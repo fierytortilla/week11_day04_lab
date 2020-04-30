@@ -39,7 +39,7 @@ public class Deck {
         player2.receiveCard(this.dealFromDeck());
     }
 
-    public boolean playGame(Player player1, Player player2){
+    public String playGame(Player player1, Player player2){
         this.playRound(player1, player2);
         boolean gameStillPlaying= true;
         while(gameStillPlaying && this.cards.size()>1){
@@ -55,6 +55,10 @@ public class Deck {
                 this.playRound(player1, player2);
             }
         }
-        return false;
+        if (player1.getGameStatus()==true){
+            return player1.getName();
+        } else {
+            return player2.getName();
+        }
     }
 }

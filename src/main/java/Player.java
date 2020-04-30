@@ -26,6 +26,12 @@ public class Player {
         this.winner= false;
     }
 
+    public boolean getGameStatus(){
+        return this.winner;
+    }
 
 
+    public String getName() {
+        return this.name;
+    }
 }
